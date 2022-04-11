@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "hfdesignpatterns"
+version = "0.1.0"
+description = "My exercises from the book head first design pattern 2nd edition in python"
+authors = ["Simone Gaiarin <simgunz@gmail.com>"]
+license = "MIT license"
+readme = "README.md"
+repository = "https://github.com/simgunz/head-first-design-patters-exercises"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "6.2.5"
+pytest-mock = "^3.7.0"
+flake8 = "^4.0.1"
+black = "^22.1.0"
+isort = "^5.10.1"
+pre-commit = "^2.17.0"
+bump2version = "^1.0.1"
+
+[build-system]
+requires = ["poetry>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
