@@ -1,6 +1,6 @@
 import abc
 
-from .behaviours.fly import FlyWithWings
+from .behaviours.fly import FlyNoWay, FlyWithWings
 from .behaviours.quack import Quack
 
 
@@ -30,3 +30,12 @@ class MallardDuck(Duck):
 
     def display(self):
         print("I'm a real Mallard duck")
+
+
+class ModelDuck(Duck):
+    def __init__(self):
+        self.quack_behaviour = Quack()
+        self.fly_behaviour = FlyNoWay()
+
+    def display(self):
+        print("I'm a model duck")
