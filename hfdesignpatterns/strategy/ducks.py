@@ -1,5 +1,8 @@
 import abc
 
+from .behaviours.fly import FlyWithWings
+from .behaviours.quack import Quack
+
 
 class Duck(abc.ABC):
     def __init__(self):
@@ -18,3 +21,12 @@ class Duck(abc.ABC):
 
     def swim(self):
         print("All ducks float, even decoys!")
+
+
+class MallardDuck(Duck):
+    def __init__(self):
+        self.quack_behaviour = Quack()
+        self.fly_behaviour = FlyWithWings()
+
+    def display(self):
+        print("I'm a real Mallard duck")
