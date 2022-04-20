@@ -10,9 +10,11 @@ class DisplayElement(abc.ABC):
 
 
 class CurrentConditionsDisplay(Observer, DisplayElement):
-    def __init__(self):
+    def __init__(self, weather_data):
         self.temperature = None
         self.humidity = None
+        self._weather_data = weather_data
+        self._weather_data.register_observer(self)
 
     def update(self, temperature, humidity, pressure):
         self.temperature = temperature
