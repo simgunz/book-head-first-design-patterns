@@ -14,3 +14,9 @@ class Subject(abc.ABC):
     @abc.abstractmethod
     def notify_observers(self):
         pass
+
+
+class Observer(abc.ABC):
+    @abc.abstractmethod
+    def update(self):
+        raise NotImplementedError()
