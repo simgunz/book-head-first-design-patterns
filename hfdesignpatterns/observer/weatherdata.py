@@ -19,4 +19,8 @@ class WeatherData(Subject):
 
     def measurements_changed(self):
         """Called when the measurements change."""
-        pass
+        self.notify_observers()
+
+    def notify_observers(self):
+        for observer in self.observers:
+            observer.update(self.temperature, self.humidity, self.pressure)
