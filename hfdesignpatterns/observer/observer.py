@@ -13,7 +13,7 @@ class Subject(abc.ABC):
 
     @abc.abstractmethod
     def notify_observers(self):
-        pass
+        raise NotImplementedError()
 
 
 class Observer(abc.ABC):
