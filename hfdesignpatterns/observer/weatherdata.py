@@ -23,7 +23,7 @@ class WeatherData(Subject):
 
     def notify_observers(self):
         for observer in self.observers:
-            observer.update(self.temperature, self.humidity, self.pressure)
+            observer.update()
 
     def set_measurements(self, temperature, humidity, pressure):
         """Method to simualte new measurements."""

@@ -16,9 +16,9 @@ class CurrentConditionsDisplay(Observer, DisplayElement):
         self._weather_data = weather_data
         self._weather_data.register_observer(self)
 
-    def update(self, temperature, humidity, pressure):
-        self.temperature = temperature
-        self.humidity = humidity
+    def update(self):
+        self.temperature = self._weather_data.get_temperature()
+        self.humidity = self._weather_data.get_humidity()
         self.display()  # Not so nice to call display here
 
     def display(self):
@@ -36,7 +36,8 @@ class StatisticsDisplay(Observer, DisplayElement):
         self._weather_data = weather_data
         self._weather_data.register_observer(self)
 
-    def update(self, temperature, humidity, pressure):
+    def update(self):
+        temperature = self._weather_data.get_temperature()
         self.temperatures.append(temperature)
         self.min_temperature = min(self.min_temperature, temperature)
         self.max_temperature = max(self.max_temperature, temperature)
@@ -46,5 +47,5 @@ class StatisticsDisplay(Observer, DisplayElement):
         print(
             "Avg/Max/Min temperature ="
             f" {sum(self.temperatures) / len(self.temperatures)}"
-            "/{self.max_temperature}/{self.min_temperature}"
+            f"/{self.max_temperature}/{self.min_temperature}"
         )
