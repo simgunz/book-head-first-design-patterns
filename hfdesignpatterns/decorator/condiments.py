@@ -14,23 +14,23 @@ class CondimentDecorator(Bevarage):
 
 class Mocha(CondimentDecorator):
     def get_description(self):
-        return super().get_description() + ", Mocha"
+        return self._bevarage.get_description() + ", Mocha"
 
     def cost(self):
-        return super().cost() + 0.20
+        return self._bevarage.cost() + 0.20
 
 
 class Soy(CondimentDecorator):
     def get_description(self):
-        return super().get_description() + ", Soy"
+        return self._bevarage.get_description() + ", Soy"
 
     def cost(self):
-        return super().cost() + 0.15
+        return self._bevarage.cost() + 0.15
 
 
 class Whip(CondimentDecorator):
     def get_description(self):
-        return super().get_description() + ", Whip"
+        return self._bevarage.get_description() + ", Whip"
 
     def cost(self):
-        return super().cost() + 0.10
+        return self._bevarage.cost() + 0.10
