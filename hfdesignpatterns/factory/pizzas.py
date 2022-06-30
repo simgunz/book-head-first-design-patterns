@@ -53,6 +53,9 @@ class ChicagoCheesePizza(Pizza):
         super().bake()
         print("Baking for 2 minutes")
 
+    def cut(self):
+        print("Cutting the pizza into square slices")
+
 
 class ChicagoVeggiePizza(Pizza):
     def __init__(self):

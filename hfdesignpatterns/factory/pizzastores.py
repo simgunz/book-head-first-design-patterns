@@ -25,7 +25,7 @@ class NYStylePizzaStore(PizzaStore):
             return NYVeggiePizza()
 
 
-class ChigagoStylePizzaStore(PizzaStore):
+class ChicagoStylePizzaStore(PizzaStore):
     def createPizza(self, type):
         if type == "cheese":
             return ChicagoCheesePizza()
@@ -35,5 +35,8 @@ class ChigagoStylePizzaStore(PizzaStore):
 
 if __name__ == "__main__":
     pizza_store = NYStylePizzaStore()
+    pizza_store.orderPizza("cheese")
+    pizza_store.orderPizza("veggie")
+    pizza_store = ChicagoStylePizzaStore()
     pizza_store.orderPizza("cheese")
     pizza_store.orderPizza("veggie")
