@@ -8,6 +8,12 @@ class Pizza:
     def bake(self):
         print(f"Baking {self.name}:")
 
+    def cut(self):
+        print("Cutting the pizza into diagonal slices")
+
+    def box(self):
+        print("Place pizza in official PizzaStore box")
+
 
 class NYCheesePizza(Pizza):
     def __init__(self):

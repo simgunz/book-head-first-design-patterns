@@ -8,6 +8,8 @@ class PizzaStore(abc.ABC):
         pizza = self.createPizza(pizzaType)
         pizza.prepare()
         pizza.bake()
+        pizza.cut()
+        pizza.box()
         return pizza
 
     @abc.abstractmethod
