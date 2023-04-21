@@ -24,8 +24,12 @@ class Singleton(metaclass=SingletonMeta):
         Finally, any singleton should define some business logic, which can be
         executed on its instance.
         """
+        print("Business logic")
 
-        # ...
+
+class AnotherSingleton(metaclass=SingletonMeta):
+    def some_other_logic(self):
+        print("Other logic")
 
 
 if __name__ == "__main__":
@@ -36,5 +40,13 @@ if __name__ == "__main__":
 
     if id(s1) == id(s2):
         print("Singleton works, both variables contain the same instance.")
+    else:
+        print("Singleton failed, variables contain different instances.")
+
+    os1 = AnotherSingleton()
+    os2 = AnotherSingleton()
+
+    if id(os1) == id(os2):
+        print("AnotherSingleton works, both variables contain the same instance.")
     else:
         print("Singleton failed, variables contain different instances.")
